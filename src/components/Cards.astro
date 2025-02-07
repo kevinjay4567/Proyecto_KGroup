@@ -1,0 +1,78 @@
+<div class="container">
+    <img class="img-sneakers" src="/airforce.webp" alt="">
+    <div class="icon-container">
+        <img class="icon-shopping-cart" src="/shopping-cart.svg"></img>
+    </div>
+    <div class="title-container">
+        <p>Nike Air Force 1</p>
+    </div>
+
+    <div class="pricing-category">
+        <p>Men's shoe</p>
+        <p>$100</p>
+    </div>
+    
+</div>
+
+<style>
+    .container{
+        border-radius: 10%;
+        overflow: hidden;
+        border-color: red;
+        border-style:solid;
+        width: 250px;
+        height: 300px;
+        display: relative; /* Organiza en columna */
+        flex-direction: column;
+        align-items: center; /* Centra el ícono horizontalmente */
+        
+    }
+    .img-sneakers{
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .icon-container{
+        width: 50px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: white;
+        top: 150px;
+        left: 170px;
+        z-index: 2;
+        box-shadow: 0 4px 10px rgba(59, 56, 56, 0.5);
+    }
+    .icon-shopping-cart{
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+    .title-container{
+        width: 100%;
+        height: 30%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        
+    }
+
+    p{  
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+    }
+
+    .pricing-category{
+        width: 100%;
+        height: 10%;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+</style>
