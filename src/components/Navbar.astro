@@ -1,0 +1,39 @@
+---
+import SearchIcon from "./icons/SearchIcon.astro"
+---
+<nav class="navbar-container">
+    <h2>Shoes Shop</h2>
+    <ul>
+        <li>Men</li>
+        <li>Women</li>
+        <li>Children</li>
+        <li><SearchIcon /> Search</li>
+    </ul>
+
+    <ul>
+        <li>Account</li>
+        <li>Cart</li>
+    </ul>
+</nav>
+<hr class="navbar-separator">
+
+<style>
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & ul {
+            display: flex;
+            list-style: none;
+            font-size: 18px;
+            gap: 35px;
+        }
+    }
+
+    .navbar-separator {
+        margin-top: -6px;
+        height: 1px;    
+        background-color: red;
+    }
+</style>
