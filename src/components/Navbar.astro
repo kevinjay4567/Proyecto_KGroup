@@ -1,13 +1,14 @@
 ---
 import SearchIcon from "./icons/SearchIcon.astro"
 ---
+
 <nav class="navbar-container">
     <h2>Shoes Shop</h2>
     <ul>
         <li>Men</li>
         <li>Women</li>
         <li>Children</li>
-        <li><SearchIcon /> Search</li>
+        <li class="navbar-search"><SearchIcon /> Search</li>
     </ul>
 
     <ul>
@@ -31,9 +32,15 @@ import SearchIcon from "./icons/SearchIcon.astro"
         }
     }
 
+    .navbar-search {
+        padding: 0px 5px 0px 5px;
+        border: 2px black solid;
+        border-radius: 8px;
+    }
+
     .navbar-separator {
         margin-top: -6px;
-        height: 1px;    
+        height: 0.2px;    
         background-color: red;
     }
 </style>
