@@ -1,30 +1,28 @@
-<div class="container">
+<div class="card">
     <img class="img-sneakers" src="/airforce.webp" alt="">
     <div class="icon-container">
         <img class="icon-shopping-cart" src="/shopping-cart.svg"></img>
     </div>
-    <div class="title-container">
-        <p>Nike Air Force 1</p>
-    </div>
+    <div class="text-container">
+        <h1>Nike Air Force 1</h1>
 
-    <div class="pricing-category">
-        <p>Men's shoe</p>
-        <p>$100</p>
+        <div class="description-pricing">
+            <p>Men's shoe</p>
+            <p>$90</p>
+        </div>
     </div>
     
 </div>
 
 <style>
-    .container{
+    .card{
         border-radius: 10%;
         overflow: hidden;
-        border-color: red;
-        border-style:solid;
-        width: 250px;
-        height: 300px;
-        display: relative; /* Organiza en columna */
+        width: 300px;
+        height: 320px;
+        display: relative; 
         flex-direction: column;
-        align-items: center; /* Centra el ícono horizontalmente */
+        align-items: center; 
         
     }
     .img-sneakers{
@@ -41,22 +39,23 @@
         border-radius: 50%;
         background-color: white;
         top: 150px;
-        left: 170px;
+        left: 230px;
         z-index: 2;
-        box-shadow: 0 4px 10px rgba(59, 56, 56, 0.5);
+        box-shadow: 0 4px 10px rgba(113, 105, 105, 0.5);
     }
     .icon-shopping-cart{
         width: 30px;
         height: 30px;
         margin: 10px;
     }
-    .title-container{
+    .text-container{
         width: 100%;
         height: 30%;
         background-color: white;
-        display: flex;
+        display: inline-block;
         align-items: center;
         padding: 10px;
+        color: rgb(52, 21, 9);
         
     }
 
@@ -67,12 +66,10 @@
         font-family: Arial, sans-serif;
     }
 
-    .pricing-category{
-        width: 100%;
-        height: 10%;
-        background-color: white;
+    .description-pricing{
         display: flex;
-        justify-content: space-between;
-        padding: 10px;
+        justify-content:space-between;
+        padding-right: 10%;
+        color: rgb(93, 83, 78);
     }
 </style>
