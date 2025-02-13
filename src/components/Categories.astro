@@ -1,0 +1,120 @@
+---
+const categories = [
+  { name: "Lifestyle", value: 86 },
+  { name: "Football", value: 95 },
+  { name: "Soccer", value: 47 },
+  { name: "Running", value: 43 },
+  { name: "Gymming", value: 61 },
+];
+---
+
+<div class="categories-container">
+  <div class="header">
+    <h2>Categories</h2>
+    <button id="toggle-button" class="toggle-button">↑</button>
+  </div>
+  <ul id="categories-list" class="categories-list">
+    {
+      categories.map((category) => (
+        <li class="category-item">
+          <span class="category-name">{category.name}</span>
+          <span class="category-value">${category.value}</span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  
+  .categories-container {
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #fff5f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #462822;
+    font-weight: 600;
+  }
+
+  
+  .toggle-button {
+    background: #fff5f0;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #956a4d;
+  }
+
+  .toggle-button:hover {
+    background: #e2e8f0;
+    color: #2d3748;
+  }
+
+  
+  .categories-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  
+  .category-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  .category-item:last-child {
+    border-bottom: none;
+  }
+
+  .category-name {
+    font-size: 1rem;
+    color: #61564f;
+    font-weight: 500;
+  }
+
+  .category-value {
+    font-size: 1rem;
+    color: #462822; 
+    font-weight: 600;
+    background: #fff5f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+</style>
+
+<script>
+  
+  const toggleButton = document.getElementById('toggle-button');
+  const categoriesList = document.getElementById('categories-list');
+
+  if (toggleButton && categoriesList) {
+    toggleButton.addEventListener('click', () => {
+      categoriesList.style.display = categoriesList.style.display === 'none' ? 'block' : 'none';
+      toggleButton.textContent = categoriesList.style.display === 'none' ? '↓' : '↑';
+    });
+  }
+</script>
