@@ -1,11 +1,88 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Navbar from "../components/Navbar.astro";
+import FooterPrincipal from "../components/FooterPrincipal.astro";
+import Layout from "../layouts/Layout.astro";
+import CategoryList from "../components/Categories.astro";
+import Cards from "../components/Cards.astro";
+import ShopButton from "../components/ShopButton.astro";
+import PriceRangeSlider from "../components/PriceRangeSlider.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const items = [
+  "item 1",
+  "item 2",
+  "item 3",
+  "item 1",
+  "item 2",
+  "item 3",
+  "item 1",
+  "item 2",
+  "item 3",
+];
 ---
 
 <Layout>
-	<Welcome />
+
+  <!-- Header -->
+  <Navbar />
+
+  <!-- Main Content -->
+  <main>
+    <ShopButton />
+    <div class="filter-list-container">
+      <h4>Men Shoes and Sneakers</h4>
+      <ul class="filter-list">
+        <li>Newest</li>
+        <li>Most Rated</li>
+        <li>Low Prices</li>
+        <li>Your Mail</li>
+      </ul>
+    </div>
+    <hr />
+
+    <div class="main-content">
+      <div class="main-left-content">
+        <CategoryList />
+		<PriceRangeSlider />
+      </div>
+
+      <div class="main-rigth-content">
+        {items.map(() => <Cards />)}
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <FooterPrincipal />
 </Layout>
+
+<style>
+  .filter-list {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+  }
+
+  .filter-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .main-left-content {
+    flex-basis: 30%;
+  }
+
+  .main-rigth-content {
+    flex-basis: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 50px;
+  }
+</style>
